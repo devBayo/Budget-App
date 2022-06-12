@@ -107,6 +107,19 @@ form {
   margin: 0 auto;
 }
 
+form *:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--green-accent-color);
+}
+
+form.debit *:focus {
+  box-shadow: inset 0 0 0 1px var(--red-accent-color);
+}
+
+button.check-btn:focus {
+  box-shadow: none;
+}
+
 .grid-form {
   grid-template-columns: 6rem 1fr 10rem auto;
   align-items: center;
@@ -137,6 +150,10 @@ select {
   height: 2.5rem;
   width: 2.5rem;
   color: var(--green-accent-color);
+}
+
+form.debit .check-icon{
+  color: var(--red-accent-color);
 }
 
 /* Budget view section */
