@@ -13,6 +13,11 @@ const btnCheck = document.querySelector('.check-btn');
 const incomeList = document.querySelector('.income-list');
 const expensesList = document.querySelector('.expenses-list');
 
+// Setting current month
+labelMonth.textContent = Intl.DateTimeFormat(navigator.language, {
+  month: 'long',
+}).format(new Date());
+
 // Global ish
 const incomeArr = [];
 const expensesArr = [];
@@ -31,7 +36,11 @@ const addBudget = function () {
   }
   const html = ` 
     <li class="${type}-item">
-      <span class="item-title">${description.value}</span>
+      <span class="item-title">${
+        description.value.length > 30
+          ? description.value.slice(0, 31) + '...'
+          : description.value
+      }</span>
       <span class="item-worth">${type === 'income' ? '+' : '-'} ${Number(
     amount.value
   ).toFixed(2)}</span>
@@ -47,7 +56,10 @@ const calcBalance = function () {
   const totalExpenses = expensesArr.reduce((prev, curr) => prev + curr, 0);
   labelTotalExpenses.textContent = totalExpenses.toFixed(2);
 
-  labelBalance.textContent = (totalIncome - totalExpenses).toFixed(2);
+  labelBalance.textContent =
+    totalIncome > totalExpenses
+      ? `+ ${(totalIncome - totalExpenses).toFixed(2)}`
+      : `- ${Math.abs(totalIncome - totalExpenses).toFixed(2)}`;
 };
 // EventListeners
 
