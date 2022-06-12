@@ -13,13 +13,22 @@ const btnCheck = document.querySelector('.check-btn');
 const incomeList = document.querySelector('.income-list');
 const expensesList = document.querySelector('.expenses-list');
 
-// 
+// Global ish
+const incomeArr = [];
+const expensesArr = [];
 
 // Functions
 // Add budget logic
 const addBudget = function () {
   const type = sign.value;
-  const element = type === 'income' ? incomeList : expensesList;
+  let element;
+  if (type === 'income') {
+    element = incomeList;
+    incomeArr.push(amount.value);
+  } else {
+    element = expensesList;
+    expensesArr.push(amount.value);
+  }
   const html = ` 
     <li class="${type}-item">
       <span class="item-title">${description.value}</span>
@@ -29,9 +38,7 @@ const addBudget = function () {
   element.insertAdjacentHTML('beforeend', html);
 };
 
-const calcBalance = function () {
-
-};
+const calcBalance = function () {};
 // EventListeners
 
 // Sign logic
