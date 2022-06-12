@@ -24,21 +24,31 @@ const addBudget = function () {
   let element;
   if (type === 'income') {
     element = incomeList;
-    incomeArr.push(amount.value);
+    incomeArr.push(+amount.value);
   } else {
     element = expensesList;
-    expensesArr.push(amount.value);
+    expensesArr.push(+amount.value);
   }
   const html = ` 
     <li class="${type}-item">
       <span class="item-title">${description.value}</span>
-      <span class="item-worth">${amount.value}</span>
+      <span class="item-worth">${type === 'income' ? '+' : '-'} ${Number(
+    amount.value
+  ).toFixed(2)}</span>
       <span class="percentage exp--item--percentage">-</span>
     </li>`;
   element.insertAdjacentHTML('beforeend', html);
 };
 
-const calcBalance = function () {};
+const calcBalance = function () {
+  const totalIncome = incomeArr.reduce((prev, curr) => prev + curr, 0);
+  labelTotalIncome.textContent = totalIncome.toFixed(2);
+
+  const totalExpenses = expensesArr.reduce((prev, curr) => prev + curr, 0);
+  labelTotalExpenses.textContent = totalExpenses.toFixed(2);
+
+  labelBalance.textContent = (totalIncome - totalExpenses).toFixed(2);
+};
 // EventListeners
 
 // Sign logic
@@ -53,6 +63,7 @@ btnCheck.addEventListener('click', function (e) {
   e.preventDefault();
   if (description.value && amount.value) {
     addBudget();
+    calcBalance();
     description.value = amount.value = '';
     amount.blur();
   }
