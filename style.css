@@ -98,7 +98,7 @@ header {
 /* Budget Section */
 .budget-section {
   height: 10vh;
-  background-color: #f4f4f4;
+  background-color: #f4f4f4cc;
 }
 
 form {
@@ -129,11 +129,11 @@ select {
   align-items: center;
 }
 
-.check-btn:hover{
+.check-btn:hover {
   cursor: pointer;
 }
 
-.check-icon{
+.check-icon {
   height: 2.5rem;
   width: 2.5rem;
   color: var(--green-accent-color);
@@ -178,7 +178,13 @@ select {
   padding: 1rem;
 }
 
-.item-title, .item-worth {
+.income-item:nth-child(even),
+.expenses-item:nth-child(even) {
+  background-color: #f4f4f496;
+}
+
+.item-title,
+.item-worth {
   font-size: 1.2rem;
 }
 
@@ -186,7 +192,7 @@ select {
   margin-left: auto;
 }
 
-.exp--item--percentage{
+.exp--item--percentage {
   margin-left: 1rem;
   color: var(--red-accent-color);
   background-color: #ed48362c;
