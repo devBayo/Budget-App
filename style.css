@@ -74,6 +74,7 @@ header {
   font-size: 1.2rem;
 }
 
+/* Utilities */
 .grid {
   display: grid;
 }
@@ -87,3 +88,22 @@ header {
   grid-template-columns: auto 1fr auto;
 }
 
+/* Budget Section */
+.budget-section {
+  height: 10vh;
+  background-color: #f4f4f4;
+}
+form {
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+input,
+select {
+  height: 70%;
+  border: none;
+  padding: 0 2rem;
+}
