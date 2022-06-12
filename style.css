@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
+:root {
+  --green-accent-color: #1eaeaa;
+  --red-accent-color: #ed4836;
+}
+
 /* Base setup  */
 * {
   padding: 0;
@@ -51,17 +56,25 @@ header {
 }
 
 .percentage {
+  width: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.exp--percentage {
   background-color: #f4f4f469;
-  /* font-size: 5px; */
 }
 
 .income-summary {
-  background-color: #1eaeaa;
+  background-color: var(--green-accent-color);
   margin: 1rem 0;
 }
 
 .expenses-summary {
-  background-color: #ec4735;
+  background-color: var(--red-accent-color);
 }
 
 .summary {
@@ -72,6 +85,9 @@ header {
 .expenses-summary {
   padding: 1rem 2rem;
   font-size: 1.2rem;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: auto 1fr auto;
 }
 
 /* Utilities */
@@ -79,31 +95,107 @@ header {
   display: grid;
 }
 
-.grid-2-col {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3-col {
-  gap: 2rem;
-  grid-template-columns: auto 1fr auto;
-}
-
 /* Budget Section */
 .budget-section {
   height: 10vh;
   background-color: #f4f4f4;
 }
+
 form {
   height: 100%;
-  width: 50%;
+  max-width: 60rem;
   margin: 0 auto;
+}
+
+.grid-form {
+  grid-template-columns: 6rem 1fr 10rem auto;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 input,
 select {
   height: 70%;
+  border: 1px solid #77777754;
+  padding: 0 1rem 0 2rem;
+  background-color: #fff;
+}
+
+.check-btn {
   border: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-btn:hover{
+  cursor: pointer;
+}
+
+.check-icon{
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--green-accent-color);
+}
+
+/* Budget view section */
+.budget-view {
+  height: 45vh;
+  max-width: 90rem;
   padding: 0 2rem;
+  margin: 3rem auto 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+}
+
+.view-title {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.income--title {
+  color: var(--green-accent-color);
+}
+
+.expenses--title {
+  color: var(--red-accent-color);
+}
+
+.income-list,
+.expenses-list {
+  list-style: none;
+  border-bottom: solid 1px #eee;
+}
+
+.income-item,
+.expenses-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  border-top: solid 1px #eee;
+  padding: 1rem;
+}
+
+.item-title, .item-worth {
+  font-size: 1.2rem;
+}
+
+.item-worth {
+  margin-left: auto;
+}
+
+.exp--item--percentage{
+  margin-left: 1rem;
+  color: var(--red-accent-color);
+  background-color: #ed48362c;
+}
+
+.income-item > .item-worth {
+  color: var(--green-accent-color);
+}
+
+.expenses-item > .item-worth {
+  color: var(--red-accent-color);
 }

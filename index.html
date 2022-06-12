@@ -17,30 +17,70 @@
       <!-- Summary -->
       <div class="summary">
         <!-- Income summary -->
-        <div class="income-summary grid grid-3-col">
+        <div class="income-summary">
           <p class="title">Income</p>
           <p class="total">+ <span class="total-income">4,300.00</span></p>
-          <p class="">&nbsp;</p>
+          <p class="percentage">&nbsp;</p>
         </div>
         <!-- Expenses summary -->
-        <div class="expenses-summary grid grid-3-col">
+        <div class="expenses-summary">
           <p class="title">Expenses</p>
           <p class="total">- <span class="total-expenses">1,954.36</span></p>
-          <p class="percentage">-</p>
+          <p class="percentage exp--percentage">-</p>
         </div>
       </div>
     </header>
     <!-- Budget Section -->
     <section class="budget-section">
-      <form action="#" class="grid grid-3-col">
+      <form action="#" class="grid grid-form">
         <select name="" id="">
           <option value="+">+</option>
           <option value="-">-</option>
         </select>
         <input type="text" name="" placeholder="Add description" id="" />
         <input type="number" min="0" name="" placeholder="value" id="" />
+        <button class="check-btn">
+          <ion-icon
+            class="check-icon"
+            name="checkmark-circle-outline"
+          ></ion-icon>
+        </button>
       </form>
     </section>
+
+    <!-- Budget view section -->
+    <section class="budget-view grid">
+      <div class="income-overview">
+        <h2 class="view-title income--title">Income</h2>
+        <ul class="income-list">
+          <li class="income-item">
+            <span class="item-title">Salary</span>
+            <span class="item-worth">+ 2,100.00</span>
+          </li>
+          <li class="income-item">
+            <span class="item-title">Sold car</span>
+            <span class="item-worth">+ 1,500.00</span>
+          </li>
+        </ul>
+      </div>
+      <div class="expenses-overview">
+        <h2 class="view-title expenses--title">Expenses</h2>
+        <ul class="expenses-list">
+          <li class="expenses-item">
+            <span class="item-title">Apartment rent</span>
+            <span class="item-worth">- 900.00</span>
+            <span class="percentage exp--item--percentage">-</span>
+          </li>
+          <li class="expenses-item">
+            <span class="item-title">Grocery shopping</span>
+            <span class="item-worth">- 435.28</span>
+            <span class="percentage exp--item--percentage">-</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
