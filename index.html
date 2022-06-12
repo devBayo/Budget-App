@@ -14,15 +14,20 @@
         Available Budget in <span class="month">Month</span>
       </p>
       <h1 class="balance">235120.80</h1>
-      <div class="income-summary">
-        <p class="title">Income</p>
-        <p class="total">4,300.00</p>
-        <p></p>
-      </div>
-      <div class="expenses-summary">
-        <p class="title">Expenses</p>
-        <p class="total">1,954.36</p>
-        <p class="percentage">-</p>
+      <!-- Summary -->
+      <div class="summary">
+        <!-- Income summary -->
+        <div class="income-summary grid grid-3-col">
+          <p class="title">Income</p>
+          <p class="total">+ <span class="total-income">4,300.00</span></p>
+          <p class="">&nbsp;</p>
+        </div>
+        <!-- Expenses summary -->
+        <div class="expenses-summary grid grid-3-col">
+          <p class="title">Expenses</p>
+          <p class="total">- <span class="total-expenses">1,954.36</span></p>
+          <p class="percentage">-</p>
+        </div>
       </div>
     </header>
     <script src="script.js"></script>
