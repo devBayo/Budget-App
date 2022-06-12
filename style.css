@@ -152,7 +152,7 @@ select {
   color: var(--green-accent-color);
 }
 
-form.debit .check-icon{
+form.debit .check-icon {
   color: var(--red-accent-color);
 }
 
