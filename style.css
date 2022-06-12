@@ -185,6 +185,8 @@ form.debit .check-icon {
 .expenses-list {
   list-style: none;
   border-bottom: solid 1px #eee;
+  height: 35vh;
+  overflow-x: hidden;
 }
 
 .income-item,
@@ -193,6 +195,10 @@ form.debit .check-icon {
   grid-template-columns: auto 1fr auto;
   border-top: solid 1px #eee;
   padding: 1rem;
+}
+
+.income-item .percentage {
+  display: none;
 }
 
 .income-item:nth-child(even),
