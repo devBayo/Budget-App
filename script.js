@@ -37,16 +37,19 @@ const addBudget = function () {
   const html = ` 
     <li class="${type}-item">
       <span class="item-title">${
-        description.value.length > 30
-          ? description.value.slice(0, 31) + '...'
+        description.value.length > 20
+          ? description.value.slice(0, 21) + '...'
           : description.value
       }</span>
       <span class="item-worth">${type === 'income' ? '+' : '-'} ${Number(
     amount.value
   ).toFixed(2)}</span>
       <span class="percentage exp--item--percentage">-</span>
+      <span class="delete">
+          <ion-icon class="trash-icon" name="trash-outline"></ion-icon>
+        </span>
     </li>`;
-  element.insertAdjacentHTML('beforeend', html);
+  element.insertAdjacentHTML('afterbegin', html);
 };
 
 const calcBalance = function () {
