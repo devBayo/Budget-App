@@ -66,6 +66,7 @@ const calcBalance = function () {
 };
 // EventListeners
 
+// Operator-
 // Sign logic
 sign.addEventListener('click', function () {
   sign.value === 'income'
