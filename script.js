@@ -34,6 +34,8 @@ const addBudget = function () {
     element = expensesList;
     expensesArr.push(+amount.value);
   }
+  
+  // UI update logic
   const html = ` 
     <li class="${type}-item">
       <span class="item-title">${
