@@ -86,3 +86,4 @@ btnCheck.addEventListener('click', function (e) {
     amount.blur();
   }
 });
+
