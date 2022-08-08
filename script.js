@@ -23,7 +23,6 @@ labelMonth.textContent = Intl.DateTimeFormat(navigator.language, {
 const incomeArr = [];
 const expensesArr = [];
 
-//
 // Functions
 // Add budget logic
 const addBudget = function () {
