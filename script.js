@@ -1,6 +1,7 @@
 'use strict';
 
 // Targetting Elements
+
 const labelMonth = document.querySelector('.month');
 const labelBalance = document.querySelector('.balance');
 const labelTotalIncome = document.querySelector('.total-income');
@@ -37,6 +38,8 @@ const addBudget = function () {
     element = expensesList;
     expensesArr.push(+amount.value);
   }
+  
+  // UI update logic
   const html = ` 
     <li class="${type}-item">
       <span class="item-title">${
@@ -69,6 +72,7 @@ const calcBalance = function () {
 };
 // EventListeners
 
+// Operator-
 // Sign logic
 sign.addEventListener('click', function () {
   sign.value === 'income'
@@ -87,5 +91,9 @@ btnCheck.addEventListener('click', function (e) {
   }
 });
 
+<<<<<<< HEAD
 // Logic to remove item
 // incomeList.children
+=======
+//
+>>>>>>> 8a712aca9e799dde0a975b35543b95935abee82d
