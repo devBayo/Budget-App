@@ -12,6 +12,9 @@ const amount = document.querySelector('.amount');
 const btnCheck = document.querySelector('.check-btn');
 const incomeList = document.querySelector('.income-list');
 const expensesList = document.querySelector('.expenses-list');
+const incomeItem = document.querySelector('.income-item');
+const expensesItem = document.querySelector('.expenses-item');
+const trash = document.querySelectorAll('.delete');
 
 // Setting current month
 labelMonth.textContent = Intl.DateTimeFormat(navigator.language, {
@@ -60,7 +63,7 @@ const calcBalance = function () {
   labelTotalExpenses.textContent = totalExpenses.toFixed(2);
 
   labelBalance.textContent =
-    totalIncome > totalExpenses
+    totalIncome >= totalExpenses
       ? `+ ${(totalIncome - totalExpenses).toFixed(2)}`
       : `- ${Math.abs(totalIncome - totalExpenses).toFixed(2)}`;
 };
@@ -83,3 +86,6 @@ btnCheck.addEventListener('click', function (e) {
     amount.blur();
   }
 });
+
+// Logic to remove item
+// incomeList.children
